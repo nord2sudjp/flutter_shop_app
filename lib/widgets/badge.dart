@@ -17,9 +17,8 @@ class Badge extends StatelessWidget {
     return Stack(
       alignment: Alignment.center,
       children: [
-        child, // iconを表示
+        child,
         Positioned(
-          // バッジを表示
           right: 8,
           top: 8,
           child: Container(
