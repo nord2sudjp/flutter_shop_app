@@ -46,7 +46,6 @@ class CartItem extends StatelessWidget {
               'Do you want to remove the item from the cart?',
             ),
             actions: <Widget>[
-              // YesとNoで分岐しているけど処理は記述されていない。
               FlatButton(
                 child: Text('No'),
                 onPressed: () {
