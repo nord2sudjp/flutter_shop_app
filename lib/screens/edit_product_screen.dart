@@ -103,6 +103,15 @@ class _EditProductScreenState extends State<EditProductScreen> {
                 maxLines: 3,
                 keyboardType: TextInputType.multiline,
                 focusNode: _descriptionFocusNode,
+                onSaved: (value) {
+                  _editedProduct = Product(
+                    title: _editedProduct.title,
+                    price: _editedProduct.price,
+                    description: value,
+                    imageUrl: _editedProduct.imageUrl,
+                    id: null,
+                  );
+                },
               ),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
@@ -135,6 +144,19 @@ class _EditProductScreenState extends State<EditProductScreen> {
                       keyboardType: TextInputType.url,
                       textInputAction: TextInputAction.done,
                       controller: _imageUrlController,
+                      focusNode: _imageUrlFocusNode,
+                      onFieldSubmitted: (_) {
+                        _saveForm();
+                      },
+                      onSaved: (value) {
+                        _editedProduct = Product(
+                          title: _editedProduct.title,
+                          price: _editedProduct.price,
+                          description: _editedProduct.description,
+                          imageUrl: value,
+                          id: null,
+                        );
+                      },
                     ),
                   ),
                 ],
