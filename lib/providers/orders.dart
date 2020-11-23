@@ -62,7 +62,7 @@ class Orders with ChangeNotifier {
       _orders = loadedOrders.reversed.toList();
       notifyListeners();
     } catch (err) {
-      print("fetchAndSetOrders" + err);
+      print("fetchAndSetOrders" + err.toString());
     }
   }
 
